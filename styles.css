@@ -1,15 +1,19 @@
+body {
+    background-color: #2b6b3a
+}
+
 div {
     display: inline-flex;
-    background-color: darkolivegreen;
-    border: 2px solid black;
-    height: random(90, 400)px;
-    width: random(90, 400)px;
+    /* background-color: darkolivegreen;
+    border: 2px solid black; */
+    height: 200px;
+    width: 200px;
 }
 
 #runner {
     height: 90px;
     width: 90px;
-    background-color: blue;
+    background-color: yellow;
 }
 #runner[data-state="waiting"]{
     animation: waiting 0.5s linear infinite alternate;
