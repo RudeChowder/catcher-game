@@ -1,0 +1,13 @@
+div {
+    display: inline-flex;
+    background-color: darkolivegreen;
+    border: 2px solid black;
+    height: 260px;
+    width: 260px;
+}
+
+#runner {
+    height: 90px;
+    width: 90px;
+    background-color: blue;
+}
