@@ -24,6 +24,7 @@ const init = () => {
     const moveRunner = () => {
         let newLocation = document.querySelector(`#div-${Math.ceil(Math.random() * 10)}`)
         newLocation.append(runner)
+        runner.dataset.state = 'waiting'
     }
     
     

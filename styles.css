@@ -2,12 +2,69 @@ div {
     display: inline-flex;
     background-color: darkolivegreen;
     border: 2px solid black;
-    height: 260px;
-    width: 260px;
+    height: random(90, 400)px;
+    width: random(90, 400)px;
 }
 
 #runner {
     height: 90px;
     width: 90px;
     background-color: blue;
+}
+#runner[data-state="waiting"]{
+    animation: waiting 0.5s linear infinite alternate;
+}
+@keyframes waiting {
+    0% {
+      transform: rotate(4deg);
+    }
+    100% {
+      transform: rotate(-4deg);
+    }
+}
+#runner[data-state="running"]{
+    animation: "running" 0.2s linear infinite alternate;
+}
+@keyframes running {
+    0% {
+      transform: rotate(10deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    } 
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+#runner[data-state="caught"]{
+    animation: caught 0.9s linear infinite alternate;
+}
+@keyframes caught {
+    0% {
+        transform: translateY(0px);
+    }
+    12% {
+        transform: translateY(-10px);
+    } 
+    24% {
+        transform: translateY(0px);
+    }
+    37% {
+        transform: translateY(10px);
+    }  
+    50% {
+        transform: translateX(0px);
+    }
+    62% {
+        transform: translateX(-10px);
+    } 
+    75% {
+        transform: translateX(0px);
+    }
+    89% {
+        transform: translateX(10px);
+    }
 }
