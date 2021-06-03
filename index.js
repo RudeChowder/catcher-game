@@ -14,12 +14,13 @@ const init = () => {
             runner.dataset.state = 'running'
             runner.src = './img/running.png'
         })
-        runner.addEventListener('mousedown', () =>{
+        runner.addEventListener('mousedown', (event) =>{
+            event.preventDefault()
             clearTimeout(runCountdown)
             runner.dataset.state = 'caught'
             runner.src = './img/caught.png'
         })
-        runner.addEventListener('mouseup', () =>{
+        document.body.addEventListener('mouseup', () =>{
             moveRunner()
         })
     }
