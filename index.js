@@ -2,6 +2,13 @@ const init = () => {
     let runnner
     let runCountdown
 
+    const moveRunner = () => {
+        let newLocation = document.querySelector(`#div-${Math.ceil(Math.random() * 16)}`)
+        newLocation.append(runner)
+        runner.dataset.state = 'waiting'
+        runner.src = './img/waiting.png'
+    }
+
     const spawnRunner = () => {
         runner = document.createElement('img')
         runner.id = 'runner'
@@ -20,19 +27,14 @@ const init = () => {
             runner.dataset.state = 'caught'
             runner.src = './img/caught.png'
         })
-        document.body.addEventListener('mouseup', () =>{
+        runner.addEventListener('mouseup', () =>{
+            moveRunner()
+        })
+        runner.addEventListener('mouseout', () =>{
             moveRunner()
         })
     }
 
-    const moveRunner = () => {
-        let newLocation = document.querySelector(`#div-${Math.ceil(Math.random() * 16)}`)
-        newLocation.append(runner)
-        runner.dataset.state = 'waiting'
-        runner.src = './img/waiting.png'
-    }
-    
-    
     spawnRunner()
 }
 
